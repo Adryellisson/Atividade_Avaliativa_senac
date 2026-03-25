@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Filas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+         <a href="{{ url_for('logout') }}">
+            <button type = "button">
+                Sair
+            </button>
+        </a>
+        
+    </header>
+    <main class="lista">
+        <h2>Gerenciamento de Fila</h2>
+        <section>
+            <table border = "1">
+                <tr>
+                    <th>Nome do Cliente</th>
+                    <th>CPF</th>
+                    <th>Ação</th>
+                    <th>Estado</th>
+                </tr>
+                {% for usuario in usuarios %}
+                <tr>
+                    <td>{{ usuario.nome }}</td>
+                    <td>{{ usuario.cpf }}</td>
+                    <td>
+                        <form action="{{ url_for('estados_adm') }}" method="post">
+                            <input type="hidden" name="user_id" value="{{ usuario.id }}">
+                            <button type="submit">Atualizar</button>
+                        </form>
+                    </td>
+                    <td>{{ usuario.estado }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </section>
+    </main>
+</body>
+</html>

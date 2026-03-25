@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <a href="{{ url_for('logout') }}">
+            <button type = "button">
+                Sair
+            </button>
+        </a>
+    </header>
+    <main>
+        <section class ="entrar">
+            <h1>Entra na fila </h1>
+
+            {% if not em_fila %}
+            <form method="post" action="{{ url_for('filas') }}">
+                <button type="submit">Entrar na fila</button>
+            </form>
+            {% else %}
+            <p>Voce ja entrou na fila.</p>
+            {% endif %}
+        </section>
+        
+        <section class = "estado">
+            <h1>Aqui esta seu estado: </h1>
+            {% if em_fila %}
+            <p>Estado : {{ estado }}</p>
+            {% else %}
+            <p>Voce ainda nao entrou na fila.</p>
+            {% endif %}
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <a href = "{{ url_for('login') }}">
+            <button type = "button" >Login</button>
+        </a>
+    </header>
+    <main>
+        <h1> SEJA BEM VINDO AO SEU CADASTRO !</h1>
+        <section class = "form">
+            <form method = "post" action="{{ url_for('cadastro') }}">
+
+                {% if erro %}
+                    <p>{{ erro }}</p>
+                {% endif %}
+                
+                <div>
+                    <label for ="nome">Nome: </label>
+                    <input id = "nome" name = "nome" type="text" placeholder= "Nome:" required>
+                </div>
+
+                <div>
+                    <label for ="cpf">CPF: </label>
+                    <input id = "cpf" name = "cpf" type="text" maxlength="11" placeholder= "CPF:" required>
+                </div>
+
+                <div>
+                    <label for ="senha">Senha: </label>
+                    <input id = "senha" name = "senha" type="password"  placeholder= "Digite sua senha:" required>
+                </div>
+
+                <button class="button-form" type="submit">Entrar</button>
+                
+            </form>
+        </section>
+        
+    </main>
+</body>
+</html>

@@ -1,0 +1,185 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    color: #333;
+}
+
+header {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    top: 0;
+}
+
+.img{
+    position: absolute;
+}
+.hospital{
+    padding-right: 20px;
+    color: #007bff;
+}
+
+header button {
+    background-color: transparent;
+    border: 2px solid #007bff;
+    color: #007bff;
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+header button:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+main {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+main section + section {
+    margin-top: 20px;
+}
+
+h1 {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    color: #222;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+form p {
+    background-color: #ffebee;
+    color: #c62828;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    border: 1px solid #ffcdd2;
+}
+
+.form div {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+}
+
+/* Botão Enviar */
+.button-form {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.button-form:hover {
+    background-color: #0056b3;
+}
+
+main button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+main button:hover {
+    background-color: #0056b3;
+}
+
+.lista {
+    max-width: 900px;
+    width: min(95vw, 900px);
+    text-align: left;
+    padding: 30px;
+}
+
+
+.lista h2 {
+    margin-bottom: 12px;
+    color: #222;
+}
+
+.lista section {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.lista table {
+    width: 100%;
+    min-width: 620px;
+    border-collapse: collapse;
+    background-color: #ffffff;
+}
+
+
+.lista td, .lista th {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.lista th {
+    background-color: #f0f2f5;
+}
+
+.lista td:last-child,
+.lista th:last-child {
+    white-space: nowrap;
+}

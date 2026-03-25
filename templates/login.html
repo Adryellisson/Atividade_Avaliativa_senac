@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <header>
+        <a href = "{{ url_for('cadastro') }}">
+            <button type = "button" >Cadastro</button>
+        </a>
+    </header>
+
+    <main class="container">
+       
+        <section class="section">
+            <div class="login-card">
+
+                <h2>Login</h2>
+                <p>Preencha seus dados</p>
+
+                {% if erro %}
+                    <p>{{ erro }}</p>
+                {% endif %}
+
+                <form method="post" action = "{{ url_for('login') }}">
+                    <label for="cpf">CPF:</label>
+                    <input name = "cpf" type="text" placeholder="CPF:" maxlength="11" required>
+                    <label for="senha">Senha:</label>
+                    <input name = "senha" type="password" placeholder="Senha:" required>
+                    <button class="button-form" type = "submit">Entrar</button>
+                  
+                </form>
+            </div>
+         
+        </section>
+    </main>
+
+
+</body>
+</html>
