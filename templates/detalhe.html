@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Produto</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <a href="{{ url_for('index') }}">
+            <button type="button">Voltar para Lista</button>
+        </a>
+    </header>
+
+    <main class = "main_detalhe">
+        <section class="form"> 
+
+            <h2>Detalhes do Produto </h2>
+
+            <table class="detalhe-tabela">
+                <tr>
+                    <th>Nome:</th>
+                    <td>{{ produto.nome }}</td>
+                </tr>
+                <tr>
+                    <th>Descrição:</th>
+                    <td>{{ produto.descricao }}</td>
+                </tr>
+                <tr>
+                    <th>Preço:</th>
+                    <td>R$ {{ produto.preco }}</td>
+                </tr>
+            </table>
+
+        </section>
+
+    </main>
+
+    <footer class = "rodape">
+        <div class = "copyright">
+            <strong>&copy; Luisa Company StrayKids. Todos os direitos reservados.</strong>
+        </div>
+    </footer>
+</body>
+</html>

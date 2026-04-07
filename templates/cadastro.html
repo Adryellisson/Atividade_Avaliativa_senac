@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     <header>
-        <a href = "{{ url_for('login') }}">
-            <button type = "button" >Login</button>
+        <a href = "{{ url_for('index') }}">
+            <button type = "button" >Página Inicial</button>
         </a>
     </header>
     <main>
-        <h1> SEJA BEM VINDO AO SEU CADASTRO !</h1>
+        <h1> Cadastramento de Produtos!</h1>
         <section class = "form">
             <form method = "post" action="{{ url_for('cadastro') }}">
 
@@ -27,13 +27,13 @@
                 </div>
 
                 <div>
-                    <label for ="cpf">CPF: </label>
-                    <input id = "cpf" name = "cpf" type="text" maxlength="11" placeholder= "CPF:" required>
+                    <label for ="descricao">Descrição: </label>
+                    <input id = "descricao" name = "descricao" type="text" maxlength="350" placeholder= "Descrição" required>
                 </div>
 
                 <div>
-                    <label for ="senha">Senha: </label>
-                    <input id = "senha" name = "senha" type="password"  placeholder= "Digite sua senha:" required>
+                    <label for ="preco">Preço: </label>
+                    <input id = "preco" name = "preco" type="preco"  placeholder= "Digite o preço" required>
                 </div>
 
                 <button class="button-form" type="submit">Entrar</button>
@@ -42,5 +42,11 @@
         </section>
         
     </main>
+
+    <footer class = "rodape">
+        <div class = "copyright">
+            <strong>&copy; Luisa Company StrayKids. Todos os direitos reservados.</strong>
+        </div>
+    </footer>
 </body>
 </html>

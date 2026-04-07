@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header> 
+        <nav>
+            <a href = "{{ url_for('cadastro') }}">
+                <button type = "button" >Cadastro de Produtos</button>
+            </a>
+        </nav>
+    </header>
+    <main>
+        <h2>Gerenciamento de Produtos</h2>
+        <section class = "table">
+            <table>
+                <tr>
+                    <th>Nome do produto</th>
+                    <th>Descrição</th>
+                    <th>ID</th>
+                    <th>Prezos</th>
+                    <th>Infos</th>
+                </tr>
+                {% for produto in produtos %}
+                <tr>
+                    <td>{{ produto.nome }}</td>
+                    <td>{{ produto.descricao }}</td>
+                    <td>{{ produto.id }}</td>
+                    <td>{{ produto.preco }}</td>
+                    <td>
+                        <input type="hidden" name="user_id" value="{{ produto.id }}">
+                        <a href = "{{ url_for('detalhes', id_produto = produto.id) }}">
+                            <button type="button">Detalhes</button>
+                        </a>
+                    </td>
+                    
+                </tr>
+                {% endfor %}
+            </table>
+    </main>
+    <footer class = "rodape">
+        <div class = "copyright">
+            <strong>&copy; Luisa Company StrayKids. Todos os direitos reservados.</strong>
+        </div>
+    </footer>
+</body>
+</html>
